@@ -5,7 +5,9 @@ declare( strict_types=1 );
 /**
  * Tests dispatching the core/content-get and core/content-query abilities through the Abilities REST run endpoint.
  *
- * @covers WP_Abilities_Content
+ * @covers WP_Abilities_Content_Get
+ * @covers WP_Abilities_Content_Query
+ * @covers WP_Abilities_Content_Posts
  *
  * @group abilities-api
  * @group restapi

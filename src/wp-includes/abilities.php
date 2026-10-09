@@ -9,7 +9,9 @@
 
 declare( strict_types = 1 );
 
-require_once __DIR__ . '/abilities/class-wp-abilities-content.php';
+require_once __DIR__ . '/abilities/class-wp-abilities-content-posts.php';
+require_once __DIR__ . '/abilities/class-wp-abilities-content-get.php';
+require_once __DIR__ . '/abilities/class-wp-abilities-content-query.php';
 
 /**
  * Registers the core ability categories.
@@ -373,5 +375,6 @@ function wp_register_core_abilities(): void {
 	);
 
 	// Register the read-only content abilities, `core/content-get` and `core/content-query`.
-	( new WP_Abilities_Content() )->register();
+	( new WP_Abilities_Content_Get() )->register();
+	( new WP_Abilities_Content_Query() )->register();
 }

@@ -5,7 +5,9 @@ declare( strict_types=1 );
 /**
  * Tests for the core/content-get and core/content-query abilities shipped with the Abilities API.
  *
- * @covers WP_Abilities_Content
+ * @covers WP_Abilities_Content_Get
+ * @covers WP_Abilities_Content_Query
+ * @covers WP_Abilities_Content_Posts
  *
  * @group abilities-api
  */
@@ -195,7 +197,8 @@ class Tests_Abilities_API_WpRegisterCoreContentAbility extends WP_UnitTestCase {
 	private function register_abilities(): void {
 		global $wp_current_filter;
 		$wp_current_filter[] = 'wp_abilities_api_init'; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- Faking the action context to register within it.
-		( new WP_Abilities_Content() )->register();
+		( new WP_Abilities_Content_Get() )->register();
+		( new WP_Abilities_Content_Query() )->register();
 	}
 
 	/**
